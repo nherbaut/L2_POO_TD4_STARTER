@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "WordsInFiles",
+            "request": "launch",
+            "mainClass": "fr.pantheonsorbonne.cri.WordsInFiles",
+            "projectName": "artifactId"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}",
