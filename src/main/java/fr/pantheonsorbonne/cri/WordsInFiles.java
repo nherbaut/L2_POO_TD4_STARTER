@@ -1,6 +1,6 @@
 package fr.pantheonsorbonne.cri;
 
-import edu.duke.*;
+
 import java.io.*;
 import java.util.*;
 

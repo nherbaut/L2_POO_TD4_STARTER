@@ -3,45 +3,36 @@
 
 ## Exercice 1 : Longueur des mots
 
-Vous allez écrire un programme pour déterminer la longueur de mot la plus courante des mots d'un fichier. 
-Pour résoudre ce problème, vous devez connaître le nombre de mots d'un fichier de chaque longueur possible. 
-Vous devez regrouper tous les mots de longueur égale ou supérieure à 30 et ne pas compter les signes de 
-ponctuation de base constituant le premier ou le dernier caractère d'un groupe de caractères.
+Le but est de concevoir un programme capable de déterminer la longueur de mot la plus fréquente dans un fichier. 
+Pour ce faire, il faut compter le nombre de mots de chaque longueur présente dans le fichier. Les mots de 30 caractères ou plus doivent être regroupés. 
+Les signes de ponctuation situés au début ou à la fin des mots doivent être ignorés dans le calcul de la longueur.
 
 ### Instructions
 
-1. **Créer une classe** : Créez une nouvelle classe appelée `WordLengths`.
+1. **Créer une classe**  
+   Définissez une classe nommée `WordLengths`.
 
-2. **Méthode `countWordLengths`** : Écrivez une méthode `void`, `countWordLengths`, qui comporte deux paramètres :
-   - un `FileResource` nommé `resource`
-   - un tableau d'entiers nommé `counts`.
+2. **Méthode `countWordLengths`**  
+   Implémentez une méthode `void countWordLengths` acceptant deux paramètres :
+   - un objet `FileResource` nommé `resource`,
+   - un tableau d'entiers `counts`.
 
-   Cette méthode doit lire les mots de la ressource et compter le nombre de mots de chaque longueur pour 
-   tous les mots de la ressource, en enregistrant ces nombres dans le tableau `counts`.
+   La méthode doit :
+   - Parcourir tous les mots du fichier fourni par `resource`.
+   - Compter le nombre de mots pour chaque longueur et enregistrer ces valeurs dans le tableau `counts`.
+   - Si un mot commence ou se termine par un caractère non alphabétique, ce caractère ne doit pas être pris en compte dans la longueur.
+   - Les mots de longueur 30 ou plus doivent être comptabilisés dans la dernière case du tableau `counts`.
+   - Utilisez `Character.isLetter` pour déterminer si un caractère est une lettre.
 
-   - Par exemple, après l'exécution de cette méthode, `counts[k]` doit contenir le nombre de mots de longueur `k`.
-   - Si un mot a une non-lettre comme premier ou dernier caractère, il ne doit pas être compté dans la longueur du mot.
-   - Comptez les mots de longueur égale ou supérieure à 30 comme la plus grande taille représentée dans le tableau `counts`.
-   - Utilisez la méthode `Character.isLetter` pour vérifier si un caractère est une lettre.
+3. **Méthode `testCountWordLengths`**  
+   Créez une méthode `void testCountWordLengths` pour tester la méthode précédente. Elle doit :
+   - Permettre de sélectionner un fichier via un objet `FileResource`.
+   - Initialiser un tableau `counts` d’entiers de taille 31.
+   - Appeler `countWordLengths` avec le fichier sélectionné et le tableau `counts`.
+   - Afficher les résultats, c'est-à-dire le nombre de mots pour chaque longueur.
 
-3. **Méthode `testCountWordLengths`** : Écrivez une méthode `void testCountWordLengths` qui :
-   - crée un `FileResource` pour sélectionner un fichier.
-   - crée un tableau `counts` d'entiers de taille 31.
-   - appelle `countWordLengths` avec un fichier, puis imprime le nombre de mots de chaque longueur.
-
-4. **Méthode `indexOfMax`** : Écrivez une méthode `indexOfMax` qui retourne l'index de la longueur de mot la plus courante.
-
-### Exemple
-
-Pour le fichier `smallHamlet.txt` :
-- Mots de longueur 2 : My, as
-- Mots de longueur 3 : are, And, the
-- Mots de longueur 4 : Laer, give
-- Mots de longueur 5 : winds
-- Mots de longueur 6 : sister
-- Mots de longueur 7 : benefit
-- Mots de longueur 8 : embark’d, Farewell
-- Mots de longueur 11 : necessaries
+4. **Méthode `indexOfMax`**  
+   Implémentez une méthode `int indexOfMax` pour retourner l’index correspondant à la longueur de mot la plus fréquente dans le tableau `counts`.
 
 ---
 

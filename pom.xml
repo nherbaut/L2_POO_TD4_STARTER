@@ -34,13 +34,7 @@
 	</dependencyManagement>
 
 	<dependencies>
-		<dependency>
-			<groupId>com.sample</groupId>
-			<artifactId>sample</artifactId>
-			<version>1.0</version>
-			<scope>system</scope>
-			<systemPath>${project.basedir}/bin/duke.jar</systemPath>
-		</dependency>
+	
 
 		
 		<dependency>
