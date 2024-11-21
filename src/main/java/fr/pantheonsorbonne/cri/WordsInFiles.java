@@ -31,7 +31,7 @@ public class WordsInFiles {
      * Vous pouvez utiliser la méthode getName de File pour obtenir le nom du
      * fichier.
      */
-    private void addWordsFromFile(File f) {
+    private void addWordsFromFile(String f) {
         FileResource fr = new FileResource(f);
         for (String word : fr.words()) {
       

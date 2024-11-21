@@ -7,7 +7,9 @@ public class WordLengths {
     // Méthode pour compter les longueurs des mots
     public void countWordLengths(FileResource resource, int[] counts) {
 
-      
+        for(String word : resource.words()){
+            System.out.println(word);
+        }
     }
 
     // Méthode pour calculer la longueur d'un mot en excluant les caractères non
